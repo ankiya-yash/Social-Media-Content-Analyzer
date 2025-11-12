@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: social-media-content-analyzer
+    env: docker
+    dockerfilePath: Dockerfile
+    branch: main
+    plan: free
