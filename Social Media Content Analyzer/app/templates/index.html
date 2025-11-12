@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Content Analyzer</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1>📱 Social Media Content Analyzer</h1>
+                <p>Extract text from PDFs and images • Get engagement suggestions instantly</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Upload Section -->
+            <section class="upload-section">
+                <div class="upload-container" id="uploadZone">
+                    <div class="upload-icon">📤</div>
+                    <h2>Drop Your File Here</h2>
+                    <p>or click to browse</p>
+                    <input 
+                        type="file" 
+                        id="fileInput" 
+                        accept=".pdf,.jpg,.jpeg,.png,.gif,.bmp,.tiff"
+                        hidden
+                    >
+                    <small>Supported: PDF, JPG, PNG, GIF, BMP, TIFF (Max 50MB)</small>
+                </div>
+                <div id="loadingSpinner" class="spinner" style="display: none;"></div>
+            </section>
+
+            <!-- Results Section -->
+            <section id="resultsSection" class="results-section" style="display: none;">
+                <!-- File Info -->
+                <div class="file-info">
+                    <span id="fileName" class="file-name"></span>
+                    <span id="textStats" class="text-stats"></span>
+                </div>
+
+                <!-- Extracted Text -->
+                <div class="extracted-text-container">
+                    <h3>📝 Extracted Content</h3>
+                    <div id="extractedText" class="extracted-text"></div>
+                    <div class="text-actions">
+                        <button id="copyBtn" class="btn btn-secondary">📋 Copy Text</button>
+                    </div>
+                </div>
+
+                <!-- Engagement Suggestions -->
+                <div class="suggestions-container">
+                    <h3>💡 Engagement Suggestions</h3>
+                    <div id="suggestionsList" class="suggestions-list"></div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="action-buttons">
+                    <button id="newFileBtn" class="btn btn-primary">📤 Upload Another File</button>
+                    <button id="downloadBtn" class="btn btn-secondary">⬇️ Download Results</button>
+                </div>
+            </section>
+
+            <!-- Error Message -->
+            <div id="errorMessage" class="error-message" style="display: none;"></div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Social Media Content Analyzer v1.0 | Powered by FastAPI & Tesseract OCR</p>
+            <p><a href="https://github.com" target="_blank">View Source Code</a></p>
+        </footer>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
